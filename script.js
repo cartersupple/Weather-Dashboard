@@ -23,9 +23,10 @@ function init(){
 makeCityList();
 
 if(cityList) {
-    var cityName = cityList[cityList.length - 1]
+    var cityName = "Oakland"
+    cityList[cityList.length - 1]
     currentWeather(cityName, id);
-    // cityForecast(cityName, id);
+    cityForecast(cityName, id);
 }
 
 // grabs current weather data from Open Weather API for entered city
@@ -35,8 +36,8 @@ function currentWeather(cityName, id) {
     var cityLongitude;
 
     $.ajax ({
-        url: weatherURL
-        // method: "GET",
+        url: weatherURL,
+        method: "GET"
     }).then(function (data){
         $(".cityNow").append(
             `<div class="row ml-1">
@@ -53,3 +54,31 @@ function currentWeather(cityName, id) {
     })
 }
 
+function getFiveDay(cityName, id) {
+    var fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${thisCity}&units=imperial&appid=${id}`;
+
+    $.ajax({
+        url: fiveDayURL,
+        method: "GET"
+    }).then(function(data) {
+        for (i = 0; i < data.list.length; i++){
+            if(data.list[i].dt_txt.search("15:00:00") != -1) {
+                var weatherDate = data.list[i];
+                $(".forecast").append(
+                    `<div class="card bg-primary shadow m-4">
+                    <div class="card-body">
+                        <h4 class="card-title">${(new Date(1000 * forecastDate.dt).getUTCMonth()) + 1}/${new Date(1000 * forecastDate.dt).getUTCDate()}/${new Date(1000 * forecastDate.dt).getUTCFullYear()}</h4>
+                        <div class="card-text">
+                            <img src="http://openweathermap.org/img/w/${forecastDate.weather[0].icon}.png">
+                            <p class="card-text">Temp: ${forecastDate.main.temp} &degF</p>
+                            <p class="card-text">Humidity: ${forecastDate.main.humidity} %</p>
+                        </div>
+                    </div>
+                </div>`
+                );
+            }
+        }
+    })
+}
+
+init();
