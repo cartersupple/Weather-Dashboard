@@ -2,56 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Home</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather Interface</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <header>
-        <h1 class= "p-3 mb-2 bg-success text-white">Weather Dashboard </h1>
-    </header>
-
-
-    <section class="container-fluid">
+    <div class="bg-dark">
+        <h1 class="text-center mb-2 p-2 text-light">Weather Dashboard</h1>
+    </div>
+    <div class="container-fluid">
         <div class="row">
-            <div class= "col-md-4">
+            <div class="col-md-3">
                 <form>
                     <div class="input-group m-2 pr-3">
-                        <input type="text" class="inputValue" id="citySearch" placeholder="Check weather in...">
-                        <div class="submit">
-                            <button class="btn btn-outLine-secondary" type="submit" id="citySearchButton"><i class ="fas fa-search"></i></button>
+                        <input type="text" class="form-control" id="citySearchInput" placeholder="Search for a City">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="submit" id="citySearchButton"><i class="fas fa-search"></i></button>
                         </div>
                     </div>
                 </form>
-                
-
                 <div class="w-100">
-                    <ul class="cityList list-group mx-2 mt-3"></ul>
+                    <ul class="list-group cityList mx-2 mt-3"></ul>
                 </div>
             </div>
-        </div>
-
-
         <div class="col-md-9">
             <div class="card shadow m-2">
-                    <div class="card-body cityNow">
+                    <div class="card-body cityToday">
+                        
                     </div>
             </div>
-        </div>
-
-
         <div class="m-2">
             <h3> Five Day Forecast :</h3>
             <div class="forecast row text-white">
             </div>
         </div>
+</div>
+</div>
+</div>
     </section>
-<script src="script.js"></script>
-<script src="https://kit.fontawesome.com/5ae46afe61.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5ae46afe61.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
