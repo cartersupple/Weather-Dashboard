@@ -8,7 +8,7 @@
 
 # What for?
 
-## Enter a city name in the "Search Weather in..." input to populate a local storage card container. Select that city by clicking the card and weather data is populated. This weather dashboard uses 3 APIS namely Current Weather Data, 5 Day / 3 Hour Forecast, and UV Index. The app is simple and gives the user important metrics about the day's weather. 
+## Enter a city name in the "Search weather in..." input to populate a local storage card container. Select that city by clicking the card and weather data is populated. This weather dashboard uses 3 APIs from openweathermap.org namely Current Weather Data, 5 Day / 3 Hour Forecast, and UV Index. The app is simple and gives the user important metrics about the day's weather. 
 
 # Screenshot
 
