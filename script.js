@@ -77,8 +77,8 @@ function getForecast(thisCity, id) {
             if (data.list[i].dt_txt.search("15:00:00") != -1) {
                 var forecastDate = data.list[i];
                 $(".forecast").append(
-                    `<div class="card bg-primary shadow m-4">
-                        <div class="card-body">
+                    `<div class="card shadow m-2">
+                        <div class="card-body m-2 bg-success">
                             <h4 class="card-title">${(new Date(1000 * forecastDate.dt).getUTCMonth()) + 1}/${new Date(1000 * forecastDate.dt).getUTCDate()}/${new Date(1000 * forecastDate.dt).getUTCFullYear()}</h4>
                             <div class="card-text">
                                 <img src="http://openweathermap.org/img/w/${forecastDate.weather[0].icon}.png">
